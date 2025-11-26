@@ -30,8 +30,17 @@ public class WhileLoops {
     * countEvensUpTo(10) -> 5 // {2, 4, 6, 8, 10}
     */
    public static int countEvensUpTo(int n) {
-       // YOUR CODE HERE
-       return -1;
+       if (n < 1)
+        return 0;
+       int i = 1;
+       int evens = 0;
+       while (i <= n) {
+        if (i % 2 == 0) {
+            evens++;
+        }
+        i++;
+       }
+       return evens;
    }
 
 
@@ -47,8 +56,12 @@ public class WhileLoops {
     * digitSum(199) -> 19 // 1 + 9 + 9
     */
    public static int digitSum(int n) {
-       // YOUR CODE HERE
-       return -1;
+         int sum = 0;
+            while (n > 0) {
+                sum += n % 10;
+                n = n / 10;
+            }
+       return sum;
    }
 
 
@@ -72,8 +85,16 @@ public class WhileLoops {
     * // can't subtract without going negative
     */
    public static int countDownBy(int start, int step) {
-       // YOUR CODE HERE
-       return -1;
+       if (start < step)
+        return start;
+         while (start >= 0) {
+            start = start - step;
+            if (start < 0) {
+                start += step;
+                break;
+            }
+         }
+       return start;
    }
 
 
@@ -105,8 +126,14 @@ public class WhileLoops {
     * // 10 -> 20 -> 30 -> 40
     */
    public static int weeksToReachGoal(int startBalance, int weeklyDeposit, int goalBalance) {
-       // CODE HERE
-       return -1;
+       if (startBalance >= goalBalance)
+        return 0;
+       int weeks = 0;
+       while (startBalance < goalBalance) {
+        startBalance += weeklyDeposit;
+        weeks++;
+       }
+       return weeks;
    }
 
 
@@ -140,8 +167,14 @@ public class WhileLoops {
     * // battery would never drain
     */
    public static int minutesUntilDead(int startPercent, int perMinuteUse) {
-       //YOUR CODE HERE
-       return -1;
+       if (startPercent <= 0 || perMinuteUse <= 0)
+        return 0;
+        int minutes = 0;
+         while (startPercent > 0) {
+            startPercent -= perMinuteUse;
+            minutes++;
+         }
+        return minutes;
    }
 }
 
